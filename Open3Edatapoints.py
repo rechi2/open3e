@@ -374,7 +374,7 @@ dataIdentifiers = {
         1178 : O3EByteVal(1, "AcknowledgeErrorAlarmMessage"),
         1181 : O3EInt8(1, "DisplayTestMode"),#+++
         1190 : O3EInt16(4, "ThermalPower"),
-        1191 : RawCodec(1, "FuelCellStatus"),
+        1191 : O3EByteVal(1, "FuelCellStatus"),
         1192 : O3EComplexType(10, "MixerOneCircuitFlowTemperatureMinimumMaximumLimit", [O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True)]),
         1193 : O3EComplexType(10, "MixerTwoCircuitFlowTemperatureMinimumMaximumLimit", [O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True)]),
         1194 : O3EComplexType(10, "MixerThreeCircuitFlowTemperatureMinimumMaximumLimit", [O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True)]),
@@ -482,7 +482,9 @@ dataIdentifiers = {
         1339 : O3EByteVal(1, "MalfunctionHeatingUnitBlocked"),
         1340 : RawCodec(124, "FuelCellGeneratedHeatOutputMonthMatrix"),
         1341 : RawCodec(96, "FuelCellGeneratedHeatOutputYearMatrix"),
-        1342 : RawCodec(124, "GasConsumptionCentralHeatingMonthMatrix"),
+        1342 : O3EComplexType(124, "GasConsumptionCentralHeatingMonthMatrix",[
+            O3EList(64, "CurrentMonth",[O3EInt16(2, "1"), O3EInt16(2, "2"), O3EInt16(2, "3"), O3EInt16(2, "4"), O3EInt16(2, "5"), O3EInt16(2, "6"), O3EInt16(2, "7"), O3EInt16(2, "8"), O3EInt16(2, "9"), O3EInt16(2, "10"), O3EInt16(2, "11"), O3EInt16(2, "12"), O3EInt16(2, "13"), O3EInt16(2, "14"), O3EInt16(2, "15"), O3EInt16(2, "16"), O3EInt16(2, "17"), O3EInt16(2, "18"), O3EInt16(2, "19"), O3EInt16(2, "20"), O3EInt16(2, "21"), O3EInt16(2, "22"), O3EInt16(2, "23"), O3EInt16(2, "24"), O3EInt16(2, "25"), O3EInt16(2, "26"), O3EInt16(2, "27"), O3EInt16(2, "28"), O3EInt16(2, "29"), O3EInt16(2, "30"), O3EInt16(2, "31")]),
+            O3EList(64, "LastMonth",[O3EInt16(2, "1"), O3EInt16(2, "2"), O3EInt16(2, "3"), O3EInt16(2, "4"), O3EInt16(2, "5"), O3EInt16(2, "6"), O3EInt16(2, "7"), O3EInt16(2, "8"), O3EInt16(2, "9"), O3EInt16(2, "10"), O3EInt16(2, "11"), O3EInt16(2, "12"), O3EInt16(2, "13"), O3EInt16(2, "14"), O3EInt16(2, "15"), O3EInt16(2, "16"), O3EInt16(2, "17"), O3EInt16(2, "18"), O3EInt16(2, "19"), O3EInt16(2, "20"), O3EInt16(2, "21"), O3EInt16(2, "22"), O3EInt16(2, "23"), O3EInt16(2, "24"), O3EInt16(2, "25"), O3EInt16(2, "26"), O3EInt16(2, "27"), O3EInt16(2, "28"), O3EInt16(2, "29"), O3EInt16(2, "30"), O3EInt16(2, "31")]),
         1343 : RawCodec (48, "GasConsumptionCentralHeatingYearMatrix"),
         1344 : RawCodec(124, "GasConsumptionDomesticHotWaterMonthMatrix"),
         1345 : RawCodec(48, "GasConsumptionDomesticHotWaterYearMatrix"),
